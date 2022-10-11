@@ -29,27 +29,27 @@ object Expressions extends App {
 
 
   var i = 0
-  val aWhile = while (i < 10)
+  val aWhile = while (i < 10) {
     println(i)
     i += 1
+  }
+  //NEVER WRITE THIS AGAIN
 
-    //NEVER WRITE THIS AGAIN
+  // EVERYTHING IN SCALA IS AN EXPRESSION!
 
-    // EVERYTHING IN SCALA IS AN EXPRESSION!
+  val aWeirdValue = (aVariable = 3) // Unit === void
+  println(aWeirdValue)
 
-    val aWeirdValue = (aVariable = 3) // Unit === void
-    println(aWeirdValue)
+  //side effects: println(), whiles, reassigning
 
-    //side effects: println(), whiles, reassigning
+  //Code blocks
 
-    //Code blocks
+  val aCodeBlock = {
+    val y = 2
+    val z = y + 1
 
-    val aCodeBlock = {
-      val y = 2
-      val z = y + 1
-
-      if (z > 2) "hello" else "goodbye" // value of the block is the value of the last expression of it [String -> LAST EXPRESSION]
-    }
+    if (z > 2) "hello" else "goodbye" // value of the block is the value of the last expression of it [String -> LAST EXPRESSION]
+  }
 
   // 1. difference between "hello world"[String] vs println("hello world")[Unit]?
   //2.
