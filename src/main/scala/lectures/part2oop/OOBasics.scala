@@ -80,7 +80,7 @@ class Counter(val count: Int = 0) {
   }
 
   def inc(n: Int): Counter = {
-    if (n <= 0) this
+    if (n <= 0) this//RETURNS THE SAME INSTACE OF THIS
     else inc.inc(n-1)
   }
 
