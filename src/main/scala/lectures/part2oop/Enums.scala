@@ -21,14 +21,14 @@ object Enums {
       case NONE extends PermissionsWithBits(0)// 000
     }
 
-    object PermissionsWithBits{
-      def fromBits(bits: Int): PermissionsWithBits = // whatever
+  object PermissionsWithBits{
+    def fromBits(bits: Int): PermissionsWithBits = // whatever
       PermissionsWithBits.NONE
-    }
+  }
 
-    // standard API
+  // standard API
     val somePermissionsOrdinal = somePermissions.ordinal
-    val allPermissions = PermissionsWithBits.values // array of all possible values of the enum
+  val allPermissions = PermissionsWithBits.values // array of all possible values of the enum
     val readPermission: Permissions = Permissions.valueOf("READ")
 
   def main(args: Array[String]): Unit = {
