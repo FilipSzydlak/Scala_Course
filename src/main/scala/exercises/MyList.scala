@@ -33,7 +33,7 @@ abstract class MyList[+A] {
 
 }
 
-object Empty extends MyList[Nothing] {
+case object Empty extends MyList[Nothing] {
   def head: Nothing = throw new NoSuchElementException()
 
   def tail: MyList[Nothing] = throw new NoSuchElementException()
@@ -53,7 +53,7 @@ object Empty extends MyList[Nothing] {
   def ++[B >: Nothing](list: MyList[B]): MyList[B] = list
 }
 
-class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
+case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
   def head: A = h
 
   def tail: MyList[A] = t
@@ -120,6 +120,7 @@ trait MyTransformer[-A, B] {
 
 object ListTest extends App {
   val listOfInteger: MyList[Int] = new Cons(1, new Cons(2, new Cons(3, Empty)))
+  val cloneListOfInteger: MyList[Int] = new Cons(1, new Cons(2, new Cons(3, Empty)))
   val anotherListOfInteger: MyList[Int] = new Cons(4, new Cons(5, Empty))
   val listOfStrings: MyList[String] = new Cons("Hello", new Cons("Scala", Empty))
 
@@ -140,5 +141,5 @@ object ListTest extends App {
 
   }).toString)
 
-
+println(cloneListOfInteger == listOfInteger)
 }
