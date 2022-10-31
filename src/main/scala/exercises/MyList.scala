@@ -150,6 +150,18 @@ case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
     val sortedTail = t.sort(compare)
     insert(h, sortedTail)
   }
+ /* override def sort( f: (A, A) => Int ): MyList[ A ] = {
+    @tailrec
+    def insert( sortedTail: MyList[ A ], currentList: MyList[ A ] ): MyList[ A ] = {
+      if( sortedTail.isEmpty ) currentList ++ Node( head, EmptyList )
+      else if( f( head, sortedTail.head ) > 0 ) insert( sortedTail.tail, currentList ++ Node( sortedTail.head, EmptyList ) )
+      else currentList ++ Node( head, EmptyList ) ++ sortedTail
+    }
+
+    val sortedTail = tail.sort( f )
+    insert( sortedTail, EmptyList )
+  }
+ */
 
   def zipWith[B, C](list: MyList[B], zip: (A, B) => C): MyList[C] = {
     if(list.isEmpty) throw new RuntimeException(("List odes not have the same length"))
