@@ -26,7 +26,7 @@ object Inheritance extends App {
     def this(name: String) = this(name, 0)
   }
 
-  class Adult(name: String, age: Int, idCard: String) extends Person(name) //extending class with parametgers
+  class Adult(name: String, age: Int, idCard: String) extends Person(name) //extending class with parameters
 
   // overriding
   class Dog (override val creatureType: String = "domestic") extends Animal {

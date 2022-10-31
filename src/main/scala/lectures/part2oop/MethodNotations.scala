@@ -63,7 +63,7 @@ object MethodNotations extends App {
   1. OVERLOAD the + operator
   mary + "the rocktars" => new person "Mary (the rockstar)"
 
-  2. Add an age to the Persom class
+  2. Add an age to the Person class
   Add a unary + operator => new person with the age + 1
   +mary => mary with the age incrementer
 

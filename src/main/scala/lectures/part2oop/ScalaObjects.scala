@@ -9,18 +9,19 @@ object ScalaObjects{
     println(Person.N_EYES)
     println(Person.canFly)
 
-    // Scala object = SINGLETON INSTANCE
+    
     val mary = new Person("Mary")
     val john = new Person("John")
-    println(mary == john) // the same object
+    println(mary == john) 
 
+    // Scala object = SINGLETON INSTANCE
     val person1 = Person
     val person2 = Person
-    println(person1 == person2)
+    println(person1 == person2)// the same object
 
     val bobbie = Person(mary, john)
   }
-  object Person { // type + its only instance SINGLETON "single instancwe"
+  object Person { // type + its only instance SINGLETON "single instance"
     // static/class - level functionality
     val N_EYES = 2
 
